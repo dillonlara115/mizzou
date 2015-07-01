@@ -1,0 +1,657 @@
+/* Fonts ======================== */
+@font-face {
+    font-family: dancing-font;
+    src: url(http://maxtestdomain.com/theta/css/fonts/dancing-script-ot/DancingScript-Regular.otf);
+}
+/* General Styling for Web App=============*/
+
+thead:hover {
+	cursor: pointer;
+}
+
+body {
+	margin: 0px;
+	background: #F8F8F8;
+}
+
+.center-bucket {
+	width: 85%;
+	margin: 0 auto;
+	padding-bottom: 30px;
+	padding-top: 10px;
+}
+
+.center-bucket h4 {
+	border-bottom: #cfae61 2px solid;
+	margin-bottom: 10px;
+}
+
+.menu-header {
+	width: 100%;
+	height: 75px;
+	background: black;
+}
+
+#menu-image {
+	background: url('http://greekamer.com/mizzou/images/menu-image.png');
+	background-size: 40px 40px;
+	width: 40px;
+	height: 40px;
+	float: right;
+	margin-right: 20px;
+	margin-top: 15px;
+	border: none;
+	padding: 0px !important;
+}
+
+#menu-image:hover {
+	cursor: pointer;
+}
+
+#sorority-logo {
+	width: 120px;
+	height: 45px;
+	background: 	url('http://greekamer.com/mizzou/images/kappa-alpha-theta-logo.png');
+	background-size: 120px 45px;
+	float: left;
+	margin-top: 15px;
+	margin-left: 20px;
+}
+
+table { 
+color: #333; /* Lighten up font color */
+font-family: Helvetica, Arial, sans-serif; /* Nicer font */
+width: 640px; 
+border-collapse: 
+collapse; border-spacing: 0; 
+}
+
+td, th { border: 1px solid #CCC; height: 30px; } /* Make cells a bit taller */
+
+th {
+background: #F3F3F3; /* Light grey background */
+font-weight: bold; /* Make sure they're bold */
+}
+
+td {
+background: #FAFAFA; /* Lighter grey background */
+text-align: center; /* Center our text */
+}
+
+/* Login Page CSS ======================== */
+#logo {
+	background: url('http://greekamer.com/mizzou/images/background.gif');
+	margin-bottom: 20px;
+	margin-top:0px;
+	height: 100px;
+}
+
+#logo-sorority img {
+	width: 236px;
+	display: block;
+	margin: 0 auto;
+}
+
+#tagline {
+	font-family: dancing-font;
+	font-size: 24px;
+	width: 400px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#login-button {
+	width: 85px;
+	margin: 0 auto;
+}
+
+#password-reset {
+	margin: 0 auto;
+	width: 35%;
+	padding-left: 55px;
+	display: block;
+	margin-top: 10px;
+	color: black;
+}
+
+a {
+	color: black;
+}
+/*=============*/
+
+#super-list {
+	width: 350px;
+	float: left;
+}
+
+#admin-list {
+	clear: both;
+	padding-top: 20px;
+}
+
+#member-box {
+	width: 500px;
+	float: left;
+}
+
+#x-icon {
+	width: 25px;
+	height: auto;
+	float: left;
+}
+
+#admin-title {
+	margin-bottom: 10px;
+	margin-top: 0px;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+}
+
+#admin-box {
+	width: 400px;
+	float: left;
+}
+
+#account-info {
+	display: none;
+	clear: both;
+}
+
+#cancel-account-edit {
+	display: none;	
+	float: left;
+	margin-bottom: 20px;
+}
+
+#account-edit {
+	float: left;
+}
+
+#general-info {
+	display: none;
+	clear: both;
+}
+
+#cancel-general-edit {
+	display: none;	
+	float: left;
+	margin-bottom: 20px;
+}
+
+#account-general-edit {
+	float: left;
+}
+
+#parent-info {
+	display: none;
+	clear: both;
+}
+
+#cancel-parent-edit {
+	display: none;	
+	float: left;
+	margin-bottom: 20px;
+}
+
+#account-parent-edit {
+	float: left;
+}
+
+#other-info {
+	display: none;
+	clear: both;
+}
+
+#cancel-other-edit {
+	display: none;	
+	float: left;
+	margin-bottom: 20px;
+}
+
+#account-other-edit {
+	float: left;
+}
+
+#car-info {
+	display: none;
+	clear: both;
+}
+
+#cancel-car-edit {
+	display: none;	
+	float: left;
+	margin-bottom: 20px;
+}
+
+#account-car-edit {
+	float: left;
+}
+
+#allergy-info {
+	display: none;
+	clear: both;
+}
+
+#cancel-allergy-edit {
+	display: none;	
+	float: left;
+	margin-bottom: 20px;
+}
+
+#account-allergy-edit {
+	float: left;
+}
+
+#health-info {
+	display: none;
+	clear: both;
+}
+
+#cancel-health-edit {
+	display: none;	
+	float: left;
+	margin-bottom: 20px;
+}
+
+#account-health-edit {
+	float: left;
+}
+
+#auto-info {
+	display: none;
+	clear: both;
+}
+
+#cancel-auto-edit {
+	display: none;	
+	float: left;
+	margin-bottom: 20px;
+}
+
+#account-auto-edit {
+	float: left;
+}
+
+/* Basic Grey */
+.basic-grey {
+    width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+    background: #EEE;
+    padding: 20px 30px 20px 30px;
+    font: 12px Georgia, "Times New Roman", Times, serif;
+    color: #888;
+    text-shadow: 1px 1px 1px #FFF;
+    border:1px solid #DADADA;
+}
+.basic-grey h1 {
+    font: 25px Georgia, "Times New Roman", Times, serif;
+    padding: 0px 0px 10px 40px;
+    display: block;
+    border-bottom: 1px solid #d9d9d9;
+    margin: -10px -30px 30px -30px;
+    color: #888;
+}
+.basic-grey h1>span {
+    display: block;
+    font-size: 13px;
+}
+.basic-grey label {
+    display: block;
+    margin: 0px 0px 5px;
+}
+.basic-grey label>span {
+    float: left;
+    width: 80px;
+    text-align: right;
+    padding-right: 10px;
+    margin-top: 10px;
+    color: #888;
+}
+.basic-grey input[type="text"], .basic-grey input[type="email"], .basic-grey textarea,.basic-grey select{
+    border: 1px solid #DADADA;
+    color: #888;
+    height: 24px;
+    margin-bottom: 16px;
+    margin-right: 6px;
+    margin-top: 2px;
+    outline: 0 none;
+    padding: 3px 3px 3px 5px;
+    width: 70%;
+    font: normal 12px/12px Georgia, "Times New Roman", Times, serif;
+}
+
+.basic-grey input[type="password"], .basic-grey input[type="email"], .basic-grey textarea,.basic-grey select{
+    border: 1px solid #DADADA;
+    color: #888;
+    height: 24px;
+    margin-bottom: 16px;
+    margin-right: 6px;
+    margin-top: 2px;
+    outline: 0 none;
+    padding: 3px 3px 3px 5px;
+    width: 70%;
+    font: normal 12px/12px Georgia, "Times New Roman", Times, serif;
+}
+.basic-grey select {
+    background: #FFF url('down-arrow.png') no-repeat right;
+    background: #FFF url('down-arrow.png') no-repeat right);
+    appearance:none;
+    -webkit-appearance:none; 
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    width: 72%;
+    height: 30px;
+}
+.basic-grey textarea{
+    height:100px;
+}
+.basic-grey .button {
+    background: #cfae61;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+}
+
+input[type=submit], button {
+	background: #cfae61;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    margin: .5em;
+}
+
+input[type=submit]:hover, button:hover {
+	background: #A27F40;
+    cursor: pointer;
+}
+
+.basic-grey .button:hover {
+    background: #A27F40;
+    cursor: pointer;
+}
+
+
+/* Profile Styling ================= */
+
+#individual-name {
+	width: 85%;
+	margin: 0 auto;
+	background: black;
+}
+
+#individual-name h4{
+	color: white !important;
+	font-size: 26px !important;
+	margin-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.account-information p {
+	padding-left: 10px;
+	font-size: 14px;
+	color: #000000;
+	line-height: 1.75em;
+}
+
+.account-information button {
+	margin-top: 20px;
+}
+
+#account-title {
+	background: url('http://maxtestdomain.com/theta/images/icons/member-account.png') no-repeat;
+}
+
+#member-general {
+	background: url('http://maxtestdomain.com/theta/images/icons/member-general.png');
+	background-repeat: no-repeat;
+
+}
+
+#parent {
+	background: url('http://maxtestdomain.com/theta/images/icons/parent.png');
+	background-repeat: no-repeat;
+}
+
+#other {
+	background: url('http://maxtestdomain.com/theta/images/icons/other.png');
+	background-repeat: no-repeat;
+}
+
+#transport {
+	background: url('http://maxtestdomain.com/theta/images/icons/car.png');
+	background-repeat: no-repeat;
+}
+
+#allergy {
+	background: url('http://maxtestdomain.com/theta/images/icons/allergy.png');
+	background-repeat: no-repeat;
+}
+
+#health-insurance {
+	background: url('http://maxtestdomain.com/theta/images/icons/health-insurance.png');
+	background-repeat: no-repeat;
+}
+
+#auto-insurance {
+	background: url('http://maxtestdomain.com/theta/images/icons/auto-insurance.png');
+	background-repeat: no-repeat;
+}
+
+.member-info {
+	border-bottom: #cfae61 2px solid;
+	margin-bottom: 10px;
+}
+
+.image-container { 
+	width: 150px; 
+	height: 150px; 
+	margin-left: 100px;
+	margin-top: 10px;
+	overflow: hidden; 
+	float: left;
+	display: block;
+}
+.image-container img { 
+	width: 100%; 
+}
+
+#general-profile {
+	width: 85%;
+	margin: 0 auto;
+	padding-top: 10px;
+	min-height: 130px;
+}
+
+#name-display {
+	margin-left: 270px;
+	margin-top: -20px;
+	width: 230px;
+	display: block;
+}
+
+p {
+	font-size: 18px;
+	margin: 0px;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+}
+
+label {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	font-size: 14px;
+}
+
+legend {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	font-size: 14px;
+}
+
+input {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+}
+
+h4 {
+	font-size: 20px;
+	margin-bottom: 0px;
+	color: black;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+}
+
+.account-information {
+	width: 90%;
+	margin: 0 auto;
+	padding-bottom: 30px;
+	max-width: 960px;
+}
+
+.account-information h4 {
+	height: 40px;
+	padding-top: 6px;
+	padding-left: 50px;
+}
+
+.member-status {
+	font-style: italic;
+	font-size: 14px;
+}
+
+#member-information {
+	background: url('http://maxtestdomain.com/theta/images/icons/member-account.png');
+	background-repeat: no-repeat;
+	background-color: #cfae61;
+}
+
+/* ============================= */
+.st-effect-7.st-container {
+    perspective: 1500px;
+    perspective-origin: 0% 50%;
+}
+ 
+.st-effect-7 .st-pusher {
+    transform-style: preserve-3d;
+}
+ 
+.st-effect-7.st-menu-open .st-pusher {
+    transform: translate3d(300px, 0, 0);
+}
+ 
+.st-effect-7.st-menu {
+    transform: translate3d(-100%, 0, 0) rotateY(-90deg);
+    transform-origin: 100% 50%;
+    transform-style: preserve-3d;
+}
+ 
+.st-effect-7.st-menu-open .st-effect-7.st-menu {
+    visibility: visible;
+    transform: translate3d(-100%, 0, 0) rotateY(0deg);
+}
+
+
+
+input {
+	width: 200px;
+}
+
+@media print {
+
+
+
+#member-print {
+	page-break-after:always;
+	position: relative;
+}
+
+body {
+	overflow-x: visible;
+	overflow-y: visible;
+}
+
+.center-bucket {
+	display: none;
+}
+
+.main {
+	display: none;
+}
+
+.st-content {
+	overflow: visible !important;
+}
+
+.st-container {
+	overflow: visible !important;
+}
+
+#member-print {
+	height: 700px;
+}
+
+#account-title {
+	background: none;
+}
+
+#member-general {
+	background: none;
+}
+
+#parent {
+	background: none;
+}
+
+#other {
+	background: none;
+}
+
+#transport {
+	background: none;
+}
+
+#allergy {
+	background: none;
+}
+
+#health-insurance {
+	background: none;
+}
+
+#auto-insurance {
+	background: none;
+}
+
+.account-information {
+	width: 45%;
+	float: left;
+	margin-left: 10px;
+	padding-bottom: 0px;
+}
+
+#individual-name h4 {
+	font-size: 16px;
+	padding-bottom: 0px;
+}
+
+#individual-name {
+	width: 100%;
+}
+
+.account-information h4 {
+	padding-left: 0px;
+	font-size: 20px;
+}
+
+.account-information p {
+	font-size: 13px;
+}
+
+#last-item {
+	
+}
+
+.account-information p {
+	font-size: 12px;
+	color: #666666;
+	line-height: 1.45em;
+}
+ 
+}
