@@ -161,7 +161,7 @@
 			output_errors($errors);
 			?>
 	
-			<h4>Activate Your Account:</h4>
+			<h4>Activate Your Account jpage 1:</h4>
 			<h4 style="font-style: italic; font-size: 14px;">* Represents a required field</h4>
 			<br>
 			<p style="font-size: 14px;">Please enter all of the information required below. Fields without an asterisk may be filled in later, but fields with an asterisk must be completed before continuing.</p>
@@ -171,15 +171,22 @@
 				}
 			?>
 			
-			<form id="activate-form" action="activate.php" method="POST">
+			<form action="activate.php" method="POST">
 			<div class="account-information">		
 					
 						<div id="account-title" class="member-info">
 						<h4>Account Information</h4>
 						</div>
+
+						<?php session_start();
+							//finally, let's store our posted values in the session variables
+							$_SESSION['first_name'] = $_POST['first_name'];
+							$_SESSION['last_name'] = $_POST['last_name'];
+						 
+						?>
 						
 						<label for="first_name">*First Name: </label><br>
-						<input type="text" name="first_name" id="first_name"/><br>
+						<input type="text" name="first_name" /><br>
 						
 						<label for="last_name">*Last Name: </label><br>
 						<input type="text" name="last_name" /><br>
@@ -481,17 +488,17 @@
 							</fieldset>
 						</form>
 						<div class="allergy-information">
-						 <label for="allergies" style="display: block;">List any allergies:</label>
-						<textarea rows="4" cols="50" name="allergies"></textarea>
-						
-						<label for="allergies_med" style="display: block;">Are you allergic to any medications?</label>
-						<textarea rows="4" cols="50" name="medicine_allergies"></textarea>
-						
-						<label for="allergies" style="display: block;">List any medications you are taking:</label>
-						<textarea rows="4" cols="50" name="current_medications"></textarea>
-						
-						<label for="allergies" style="display: block;">Do you have any health issues? If so, please indicate:</label>
-						<textarea rows="4" cols="50" name="health_issues"></textarea>
+							 <label for="allergies" style="display: block;">List any allergies:</label>
+							<textarea rows="4" cols="50" name="allergies"></textarea>
+							
+							<label for="allergies_med" style="display: block;">Are you allergic to any medications?</label>
+							<textarea rows="4" cols="50" name="medicine_allergies"></textarea>
+							
+							<label for="allergies" style="display: block;">List any medications you are taking:</label>
+							<textarea rows="4" cols="50" name="current_medications"></textarea>
+							
+							<label for="allergies" style="display: block;">Do you have any health issues? If so, please indicate:</label>
+							<textarea rows="4" cols="50" name="health_issues"></textarea>
 						</div>
 					<br>
 						<div id="health-insurance" class="member-info">

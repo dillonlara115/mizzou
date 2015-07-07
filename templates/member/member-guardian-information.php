@@ -1,9 +1,9 @@
-<div class="modal fade" id="editAccountInformation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="editGuardianInformation" tabindex="-1" role="dialog" aria-labelledby="editGuardianInformation">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Update Current Parent/Guardian Contact Information</h4>
+        <h4 class="modal-title" id="editGuardianInformation">Update Current Parent/Guardian Contact Information</h4>
       </div>
       <div class="modal-body">
         <!--Edit Box -->

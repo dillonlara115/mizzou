@@ -13,7 +13,8 @@
 <link rel="stylesheet" type="text/css" href="http://greekamer.com/mizzou/css/component.css" />
 
 <script src="http://greekamer.com/mizzou/js/modernizr.custom.js"></script>
-
+	<script type="text/javascript" src="http://greekamer.com/mizzou/js/happy.js"></script>
+	<script type="text/javascript" src="http://greekamer.com/mizzou/js/happy.methods.js"></script>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
        

@@ -240,7 +240,7 @@ if(isset($_POST['submitNewUser'])) {
 				</h4>
 
 				<div style="max-width: 960px; margin: 0 auto;">
-					<form class='admin-form' action="admin-dashboard.php" method="POST">
+					<div class='admin-form'>
 
 						<!--Display Account Information To User -->
 						<div class="account-information">
@@ -253,8 +253,7 @@ if(isset($_POST['submitNewUser'])) {
 							<h4 style="font-size: 14px; color: gray; padding-left: 0px; margin-top: 0px;">* denotes a required field.</h4>
 							<p>*First Name: <?php echo $first_name; ?></p>
 							<p>*Last Name: <?php echo $last_name; ?></p>
-							<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Edit Account Information</button>
-							
+							<button type="button" data-toggle="modal" class="admin-form-item" data-url="admin-account-info" data-target="#editAccountInformation" >Edit Account Information</button>							
 						</div>
 						<br>
 
@@ -271,22 +270,7 @@ if(isset($_POST['submitNewUser'])) {
 							<p>*Zip Code: <?php echo $member_zip; ?></p>
 							<p>Home Phone Number: <?php echo $member_home; ?></p>
 							<p>*Cell Phone Number: <?php echo $member_cell; ?></p>
-							<button type="button" id="account-general-edit">Edit General Information</button>
-							<button type="button" id="cancel-general-edit">Cancel</button>
-
-							<!--Edit Box -->
-							<fieldset id="general-info">
-								<legend>Update Current General Information</legend>
-								Date of Birth: <br><input type="text" name="bday" placeholder="<?php echo $birthday; ?>"><br>
-								<span>School Address:</span><br><input type="text" name="member_address" placeholder="<?php echo $member_address; ?>"/><br>
-								<span>Apt:</span><br><input type="text" name="member_apt" placeholder="<?php echo $member_apt; ?>"/><br>
-								<span>City:</span><br><input type="text" name="member_city" placeholder="<?php echo $member_city; ?>"/><br>
-								<span>State:</span><br><input type="text" name="member_state" placeholder="<?php echo $member_state; ?>"/><br>
-								<span>Zip Code:</span><br><input type="text" name="member_zip" placeholder="<?php echo $member_zip; ?>"/><br>
-								<span>Home Phone Number:</span><br><input type="tel" name="member_home_phone" placeholder="<?php echo $member_home; ?>"><br>
-								<span>Cell Phone Number:</span><br><input type="tel" name="member_cell_phone" placeholder="<?php echo $member_cell; ?>"><br>
-								<input type="submit" name="updateInfo" value="Update Information" /><br>
-							</fieldset>
+							<button type="button" data-toggle="modal" class="admin-form-item" data-url="admin-general-info" data-target="#editGeneralInformation" >Edit General Information</button>
 						</div>
 						<br>
 
@@ -304,25 +288,7 @@ if(isset($_POST['submitNewUser'])) {
 							<p>*Zip Code: <?php echo $parent_zip; ?></p>
 							<p>Home Phone Number: <?php echo $parent_home; ?></p>
 							<p>*Cell Phone Number: <?php echo $parent_cell; ?></p>
-							<button type="button" id="account-parent-edit">Edit Parent/Guardian Information</button>
-							<button type="button" id="cancel-parent-edit">Cancel</button>
-
-							<!--Edit Box -->
-							<fieldset id="parent-info">
-								<legend>Update Current Parent/Guardian Contact Information</legend>
-								<label for="par_first_name">First Name: </label><br>
-								<input type="text" name="par_first_name" placeholder="<?php echo $parent_first; ?>"/><br>
-								<label for="par_last_name">Last Name: </label><br>
-								<input type="text" name="par_last_name" placeholder="<?php echo $parent_last; ?>"/><br>
-								<span>Address:</span><br><input type="text" name="par_address" placeholder="<?php echo $parent_address; ?>"/><br>
-								<span>Apt:</span><br><input type="text" name="par_apt" placeholder="<?php echo $parent_apt; ?>"/><br>
-								<span>City:</span><br><input type="text" name="par_city" placeholder="<?php echo $parent_city; ?>"/><br>
-								<span>State:</span><br><input type="text" name="par_state" placeholder="<?php echo $parent_state;?>"/><br>
-								<span>Zip Code:</span><br><input type="text" name="par_zip" placeholder="<?php echo $parent_zip; ?>"/><br>
-								<span>Home Phone Number:</span><br><input type="tel" name="par_home_phone" placeholder="<?php echo $parent_home; ?>"><br>
-								<span>Cell Phone Number:</span><br><input type="tel" name="par_cell_phone" placeholder="<?php echo $parent_cell; ?>"><br>	
-								<input type="submit" name="updateInfo" value="Update Information" /><br>
-							</fieldset>
+							<button type="button" data-toggle="modal" class="admin-form-item" data-url="admin-guardian-information" data-target="#editGuardianInformation" >Edit Parent/Guardian Information</button>
 						</div>
 						<br>
 
@@ -340,86 +306,59 @@ if(isset($_POST['submitNewUser'])) {
 							<p>Zip Code: <?php echo $other_zip; ?></p>
 							<p>*Relationship: <?php echo $other_relation; ?></p>
 							<p>*Cell Phone Number: <?php echo $other_cell; ?></p>
-							<button type="button" id="account-other-edit">Edit Additional Contact Information</button>
-							<button type="button" id="cancel-other-edit">Cancel</button>
-
-							<fieldset id="other-info">
-								<legend>Other Emergency Contact Information</legend>
-								<label for="other_first_name">First Name: </label><br>
-								<input type="text" name="other_first_name" /placeholder="<?php echo $other_first; ?>"><br>
-								<label for="other_last_name">Last Name: </label><br>
-								<input type="text" name="other_last_name" placeholder="<?php echo $other_last; ?>"/><br>
-								<span>Address:</span><br><input type="text" name="other_address" placeholder="<?php echo $other_address; ?>"/><br>
-								<span>Apt:</span><br><input type="text" name="other_apt" placeholder="<?php echo $other_apt; ?>"/><br>
-								<span>City:</span><br><input type="text" name="other_city" placeholder="<?php echo $other_city; ?>"/><br>
-								<span>State:</span><br><input type="text" name="other_state" placeholder="<?php echo $other_state; ?>"/><br>
-								<span>Zip Code:</span><br><input type="text" name="other_zip" placeholder="<?php echo $other_zip; ?>"/><br>
-								<span>Cell Phone Number:</span><br><input type="tel" name="other_cell_phone" placeholder="<?php echo $other_cell; ?>"><br>
-								<span>Relation:</span><br><input type="text" name="relation" placeholder="<?php echo $other_relation; ?>"><br>
-								<input type="submit" name="updateInfo" value="Update Information" /><br>
-							</fieldset>
+							<button type="button" data-toggle="modal" class="admin-form-item" data-url="admin-other-contact-information" data-target="#editOtherContactInformation" >Edit Additional Contact Information</button>
 						</div>
 						<br>
 
 						<!--Display Car Information To User -->
-						<div class="account-information">
-							<div id="transport" class="member-info">
-								<h4>Vehicle Information</h4>
-							</div>
-
+					<div class="account-information">
+						<div id="transport" class="member-info">
+							<h4>Vehicle Information</h4>
+						</div>
+						<form class="smart-selection">
+							<fieldset>
+								<legend>Do you have a vehicle?</legend>
+		                        <input type="radio" name="carRadio" value="Yes" class="yes-selected" />Yes<br />
+		                        <input type="radio" name="carRadio" value="No" />No<br />                
+							</fieldset>
+						</form>
+						<div class="car-information">
 							<?php if($has_car == 'noCar') {
 								echo "<p>You entered no vehicle.</p>";
-							} else {
-								?>
-								<p>Make: <?php echo $car_make; ?></p>
-								<p>Model: <?php echo $car_model; ?></p>
-								<p>License Plate Number: <?php echo $car_license; ?></p>
-								<?php }?>
-								<button type="button" id="account-car-edit">Edit Vehicle Information</button>
-								<button type="button" id="cancel-car-edit">Cancel</button>
+								} else {
+							?>
+							<p>Make: <?php echo $car_make; ?></p>
+							<p>Model: <?php echo $car_model; ?></p>
+							<p>License Plate Number: <?php echo $car_license; ?></p>
+							<?php }?>
+							<button type="button" data-toggle="modal" class="admin-form-item" data-url="admin-car-information" data-target="#editCarInformation" >Edit Vehicle Information</button>
+						</div>
+				
+					</div>
+					<br>
 
-								<fieldset id="car-info">
-									<legend>Update Vehicle Information</legend>
-									<label for="make">Make: </label><br>
-									<input type="text" name="car_make" placeholder="<?php echo $car_make; ?>"/><br>
-									<label for="model">Model: </label><br>
-									<input type="text" name="car_model" placeholder="<?php echo $car_model; ?>"/><br>
-									<label for="model">License Plate Number: </label><br>
-									<input type="text" name="license" placeholder="<?php echo $car_license; ?>"/><br>
-									<input type="submit" name="updateInfo" value="Update Information" /><br>
-								</fieldset>
-							</div>
-							<br>
-
-							<!--Display Allergy Information To User -->
-							<div class="account-information">
-								<div id="allergy" class="member-info">
-									<h4>Allergy Information</h4>
-								</div>
-								<p>*Allergies: <?php echo $allergies; ?></p>
-								<p>*Allergic to Medicines: <?php echo $allergic_medication; ?></p>
-								<p>*Current Medications: <?php echo $current_medication; ?></p>
-								<p>*Health Issues: <?php echo $health_issues; ?></p>
-								<button type="button" id="account-allergy-edit">Edit Allergy Information</button>
-								<button type="button" id="cancel-allergy-edit">Cancel</button>
-
-								<fieldset id="allergy-info">
-									<legend>Update Current Allergies</legend>
-									<label for="allergies" style="display: block;">List any allergies:</label><br>
-									<textarea rows="4" cols="50" name="allergies" placeholder="<?php echo $allergies; ?>"></textarea>
-
-									<label for="allergies_med" style="display: block;">Are you allergic to any medications?</label><br>
-									<textarea rows="4" cols="50" name="medicine_allergies" placeholder="<?php echo $allergic_medication; ?>"></textarea>
-
-									<label for="current_med" style="display: block;">List any medications you are taking:</label><br>
-									<textarea rows="4" cols="50" name="current_medications" placeholder="<?php echo $current_medication; ?>"></textarea>
-
-									<label for="allergies" style="display: block;">Do you have any health issues? If so, please indicate:</label><br>
-									<textarea rows="4" cols="50" name="health_issues" placeholder="<?php echo $health_issues; ?>"></textarea><br>
-									<input type="submit" name="updateInfo" value="Update Information" /><br>
-								</fieldset>
-							</div>
-							<br>
+					<!--Display Allergy Information To User -->
+					<div class="account-information">
+						<div id="allergy" class="member-info">
+							<h4>Allergy Information</h4>
+						</div>
+						<form class="allergy-selection">
+							<fieldset>
+								<legend>Do you have allergies?</legend>
+		                        <input type="radio" name="allergyRadio" value="Yes" class="yes-selected" />Yes<br />
+		                        <input type="radio" name="allergyRadio" value="No" />No<br />                
+							</fieldset>
+						</form>
+						
+						<div class="allergy-information">
+							<p>*Allergies: <?php echo $allergies; ?></p>
+							<p>*Allergic to Medicines: <?php echo $allergic_medication; ?></p>
+							<p>*Current Medications: <?php echo $current_medication; ?></p>
+							<p>*Health Issues: <?php echo $health_issues; ?></p>
+							<button type="button" data-toggle="modal" class="admin-form-item" data-url="admin-allergy-information" data-target="#editAllergyInformation" >Edit Allergy Information</button>
+						</div>
+					</div>
+					<br>
 
 							<!--Display Health Insurance Information To User -->
 							<div class="account-information">
@@ -431,20 +370,7 @@ if(isset($_POST['submitNewUser'])) {
 								<p>Subscriber Employer: <?php echo $health_employer; ?></p>
 								<p>Policy Number: <?php echo $health_policy; ?></p>
 								<p>Phone Number: <?php echo $health_phone; ?></p>
-								<button type="button" id="account-health-edit">Edit Health Insurance Information</button>
-								<button type="button" id="cancel-health-edit">Cancel</button>
-
-								<fieldset id="health-info">
-									<legend>Update Health Insurance Information</legend>
-									<label for="health_provider">Name of Insurance Provider: </label><br>
-									<input type="text" name="health_prov" placeholder="<?php echo $health_prov; ?>"/><br>
-									<label for="other_last_name">Subscriber Name: </label><br>
-									<input type="text" name="health_subsc" placeholder="<?php echo $health_subsc; ?>"/><br>
-									<span>Subscriber Employer:</span><br><input type="text" name="health_subsc_employer" placeholder="<?php echo $health_employer; ?>"/><br>
-									<span>Policy Number:</span><br><input type="text" name="health_policy_no" placeholder="<?php echo $health_policy; ?>"/><br>
-									<span>Phone Number:</span><br><input type="text" name="health_phone_no" placeholder="<?php echo $health_phone; ?>"/><br>
-									<input type="submit" name="updateInfo" value="Update Information" /><br>
-								</fieldset>
+								<button type="button" data-toggle="modal" class="admin-form-item" data-url="admin-health-insurance-information" data-target="#editHealthInsuranceInformation" >Edit Health Insurance Information</button>
 							</div>
 							<br>
 
@@ -453,75 +379,23 @@ if(isset($_POST['submitNewUser'])) {
 								<div id="auto-insurance" class="member-info">
 									<h4>Auto Insurance Information</h4>
 								</div>
-								<fieldset>
-									<legend>Do you have a vehicle?</legend>
-									<input type="radio" name="vehicle" value="Yes" class="yes-selected" />Yes<br />
-									<input type="radio" name="vehicle" value="No" />No<br />
-								</fieldset>
 								<p>Name of Insurance Provider: <?php echo $auto_prov; ?></p>
 								<p>Subscriber Name: <?php echo $auto_subsc; ?></p>
 								<p>Subscriber Employer: <?php echo $auto_employer; ?></p>
 								<p>Policy Number: <?php echo $auto_policy; ?></p>
 								<p>Phone Number: <?php echo $auto_phone; ?></p>
-								<button type="button" id="account-auto-edit">Edit Auto Insurance Information</button>
-								<button type="button" id="cancel-auto-edit">Cancel</button>
-
-								<fieldset id="auto-info">
-									<legend>Auto Insurance</legend>
-									<label for="auto_provider">Name of Insurance Provider: </label><br>
-									<input type="text" name="auto_prov" placeholder="<?php echo $auto_prov; ?>"/><br>
-									<label for="other_last_name">Subscriber Name: </label><br>
-									<input type="text" name="auto_subsc" placeholder="<?php echo $auto_subsc; ?>"/><br>
-									<span>Subscriber Employer:</span><br><input type="text" name="auto_subsc_employer" placeholder="<?php echo $auto_employer; ?>"/><br>
-									<span>Policy Number:</span><br><input type="text" name="auto_policy_no" placeholder="<?php echo $auto_policy; ?>"/><br>
-									<span>Phone Number:</span><br><input type="text" name="auto_phone_no" placeholder="<?php echo $auto_phone; ?>"/><br>
-									<input type="submit" name="updateInfo" value="Update Information" /><br>
-								</fieldset>
+								<button type="button" data-toggle="modal" class="admin-form-item" data-url="admin-auto-insurance-information" data-target="#editAutoInsuranceInformation" >Edit Auto Insurance Information</button>
 							</div>
 							<br><br>
-							<div class="account-information">
-
-								<input type="submit" name="updateInfo" value="Update All Information" /><br>
-							</div>
-						</form>
+							
+						</div>
 					</div><!-- /main -->
 				</div><!-- /st-content-inner -->
 			</div><!-- /st-content -->
 		</div><!-- /st-pusher -->
 	</div><!-- /st-container -->
 </div>
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Update Current Account Information</h4>
-      </div>
-      <div class="modal-body">
-        <!--Edit Box -->
-        <form class='admin-form' action="admin-dashboard.php" method="POST">
-		<fieldset >
-			<legend>Update Current Account Information</legend>
-			<label for="email">First Name: </label><br>
-			<input type="text" name="first_name" placeholder="<?php echo $first_name; ?>" /><br>
-			
-			<label for="email">Last Name: </label><br>
-			<input type="text" name="last_name" placeholder="<?php echo $last_name; ?>"/><br>
-			<input type="submit" name="updateInfo" value="Update Information" /><br>
-			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		</fieldset>
-		</form>
-      </div>
-    </div>
-  </div>
-</div>
-<script type="text/javascript">
-	 $(function() {
-	 		$('.modal-body input[type=submit]').on('click', function(){
-	 				$(this).submit();
-	 		});
-	 });
-</script>
+
+<div id="results-modals"></div>
 <?php include("includes/footer.php"); ?>
 

@@ -55,14 +55,14 @@ if(isset($_POST['submit'])) {
 			if($active == 0) {
 				array_push($errors, "This account must be activated! Check your email for verification.");
 			}
-			
-			else {
+		
+		else {
 				//Get user info and assign session variable to hold first and last name.			
 				get_member_user_info($logInReturn);
 				header('Location: member-dashboard.php');
 				exit();	
-			}
-			
+		}
+		
 		}
 	}
 	
@@ -70,52 +70,58 @@ if(isset($_POST['submit'])) {
 
 
 ?>
-<?php $pageTitle = 'University of Missouri Alpha Chapter'; include("includes/header.php"); ?>
-
-<div id="logo">
+<html>
+	<head>
+		<title>Kappa Alpha Theta | University of Missouri Alpha Chapter</title>
+		<link rel="stylesheet" type="text/css" href="http://greekamer.com/mizzou/css/style.css">
+	</head>
 	
-</div>
-
-<div id="logo-sorority">
-	<img src="http://greekamer.com/mizzou/images/kappa-alpha-theta-logo.png">
-</div>
-<div id="university">
-	<h3 id="tagline">Kappa Alpha Theta. Alpha MU Chapter. Established 1909.</h3>
-</div>
-
-<div id="login-box">
-	<?php 
-	if($_GET['changedPass'] == 1) {
-		echo "Your password has been changed. You may now log in.";
-	}
-	
-	if($_GET['emailChanged'] == 1) {
-		echo "Your email has been updated. Please log in to continue.";
-	}
-	
-	?>
-	<form action="login.php" method="post" class="basic-grey"> 
-		<label>
-			<span>Email:</span>
-			<input id="name" type="text" name="uname" placeholder=""/>
-		</label>
+	<body>
+		<div id="logo">
+			
+		</div>
 		
-		<label>
-			<span>Password:</span>
-			<input id="email" type="password" name="pass" placeholder="" />
-		</label>
+		<div id="logo-sorority">
+			<img src="http://greekamer.com/mizzou/images/kappa-alpha-theta-logo.png">
+		</div>
+		<div id="university">
+			<h3 id="tagline">Kappa Alpha Theta. Alpha MU Chapter. Established 1909.</h3>
+		</div>
 		
-		<label id="login-button">
-			<input class="button" type="submit" name="submit" value="Login" style="width: 120px;"/><br>
-		</label>  
-		
-		<span id="password-reset">
-			<a href="password-request.php" style="width:135px;">Forgot your password?</a><br><br>
-		</span>
-		<?php
+		<div id="login-box">
+			<?php 
+					if($_GET['changedPass'] == 1) {
+						echo "Your password has been changed. You may now log in.";
+					}
+					
+					if($_GET['emailChanged'] == 1) {
+						echo "Your email has been updated. Please log in to continue.";
+					}
+				
+			?>
+			<form action="login.php" method="post" class="basic-grey"> 
+			    <label>
+			        <span>Email:</span>
+			        <input id="name" type="text" name="uname" placeholder=""/>
+			    </label>
+			    
+			    <label>
+			        <span>Password:</span>
+			        <input id="email" type="password" name="pass" placeholder="" />
+			    </label>
+			    
+				<label id="login-button">
+			       <input class="button" type="submit" name="submit" value="Login" style="width: 120px;"/><br>
+			    </label>  
+			    
+			    <span id="password-reset">
+			    <a href="password-request.php" style="width:135px;">Forgot your password?</a><br><br>
+			    </span>
+			    <?php
 				//Output errors from login form, if any exist.
-		output_errors($errors);
-		?>  
-	</form>
-</div>
-<?php include("includes/footer.php"); ?>
+				output_errors($errors);
+				?>  
+			</form>
+		</div>
+	</body>
+</html>

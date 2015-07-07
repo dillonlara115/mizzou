@@ -171,7 +171,7 @@
 				}
 			?>
 			
-			<form id="activate-form" action="activate.php" method="POST">
+			<form action="activate.php" method="POST">
 			<div class="account-information">		
 					
 						<div id="account-title" class="member-info">
@@ -179,7 +179,7 @@
 						</div>
 						
 						<label for="first_name">*First Name: </label><br>
-						<input type="text" name="first_name" id="first_name"/><br>
+						<input type="text" name="first_name" /><br>
 						
 						<label for="last_name">*Last Name: </label><br>
 						<input type="text" name="last_name" /><br>
@@ -481,17 +481,17 @@
 							</fieldset>
 						</form>
 						<div class="allergy-information">
-						 <label for="allergies" style="display: block;">List any allergies:</label>
-						<textarea rows="4" cols="50" name="allergies"></textarea>
-						
-						<label for="allergies_med" style="display: block;">Are you allergic to any medications?</label>
-						<textarea rows="4" cols="50" name="medicine_allergies"></textarea>
-						
-						<label for="allergies" style="display: block;">List any medications you are taking:</label>
-						<textarea rows="4" cols="50" name="current_medications"></textarea>
-						
-						<label for="allergies" style="display: block;">Do you have any health issues? If so, please indicate:</label>
-						<textarea rows="4" cols="50" name="health_issues"></textarea>
+							 <label for="allergies" style="display: block;">List any allergies:</label>
+							<textarea rows="4" cols="50" name="allergies"></textarea>
+							
+							<label for="allergies_med" style="display: block;">Are you allergic to any medications?</label>
+							<textarea rows="4" cols="50" name="medicine_allergies"></textarea>
+							
+							<label for="allergies" style="display: block;">List any medications you are taking:</label>
+							<textarea rows="4" cols="50" name="current_medications"></textarea>
+							
+							<label for="allergies" style="display: block;">Do you have any health issues? If so, please indicate:</label>
+							<textarea rows="4" cols="50" name="health_issues"></textarea>
 						</div>
 					<br>
 						<div id="health-insurance" class="member-info">
