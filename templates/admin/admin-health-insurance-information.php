@@ -8,18 +8,28 @@
       <div class="modal-body">
         <!--Edit Box -->
         <form class='admin-form' action="admin-dashboard.php" method="POST">
-		<fieldset>
-			<legend>Update Health Insurance Information</legend>
-			<label for="health_provider">Name of Insurance Provider: </label><br>
-			<input type="text" name="health_prov" placeholder="<?php echo $health_prov; ?>"/><br>
-			<label for="other_last_name">Subscriber Name: </label><br>
-			<input type="text" name="health_subsc" placeholder="<?php echo $health_subsc; ?>"/><br>
-			<span>Subscriber Employer:</span><br><input type="text" name="health_subsc_employer" placeholder="<?php echo $health_employer; ?>"/><br>
-			<span>Policy Number:</span><br><input type="text" name="health_policy_no" placeholder="<?php echo $health_policy; ?>"/><br>
-			<span>Phone Number:</span><br><input type="text" name="health_phone_no" placeholder="<?php echo $health_phone; ?>"/><br>
+			<div class="form-group">
+				<label for="health_prov">Name of Insurance Provider: </label>
+				<input type="text" class="form-control" name="health_prov" placeholder="<?php echo $health_prov; ?>"/>
+			</div>
+			<div class="form-group">
+				<label for="health_subsc">Subscriber Name: </label>
+				<input type="text" class="form-control" name="health_subsc" placeholder="<?php echo $health_subsc; ?>"/>
+			</div>
+			<div class="form-group">
+				<label for="health_subsc_employer">Subscriber Employer: </label>
+				<input type="text" class="form-control" name="health_subsc_employer" placeholder="<?php echo $health_employer; ?>"/>
+			</div>
+			<div class="form-group">
+				<label for="health_policy_no">Policy Number:</label>
+				<input type="text" class="form-control" name="health_policy_no" placeholder="<?php echo $health_policy; ?>"/>
+			</div>
+			<div class="form-group">
+				<label for="health_phone_no">Phone Number:</label>
+				<input type="text" class="form-control" name="health_phone_no" placeholder="<?php echo $health_phone; ?>"/>
+			</div>
 			<input type="submit" name="updateInfo" value="Update Information" /><br>
 			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		</fieldset>
 		</form>
       </div>
     </div>

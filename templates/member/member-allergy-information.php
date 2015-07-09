@@ -8,22 +8,27 @@
       <div class="modal-body">
         <!--Edit Box -->
         <form class='admin-form' action="member-dashboard.php" method="POST">
-		<fieldset>
-			<legend>Update Current Allergies</legend>
-							 <label for="allergies" style="display: block;">List any allergies:</label><br>
-							<textarea rows="4" cols="50" name="allergies" placeholder="<?php echo $allergies; ?>"></textarea>
+		<div class="form-group">
+			<label for="allergies">List any allergies:</label>
+			<textarea rows="4" class="form-control" name="allergies" placeholder="<?php echo $allergies; ?>"></textarea>
+		</div>
+
+		<div class="form-group">
+			<label for="allergies_med" >Are you allergic to any medications?</label>
+			<textarea rows="4" class="form-control" name="medicine_allergies" placeholder="<?php echo $allergic_medication; ?>"></textarea>
+		</div>			 
 							
-							<label for="allergies_med" style="display: block;">Are you allergic to any medications?</label><br>
-							<textarea rows="4" cols="50" name="medicine_allergies" placeholder="<?php echo $allergic_medication; ?>"></textarea>
+		<div class="form-group">
+			<label for="current_med" style="display: block;">List any medications you are taking:</label>
+			<textarea rows="4" class="form-control" name="current_medications" placeholder="<?php echo $current_medication; ?>"></textarea>
+		</div>					
 							
-							<label for="current_med" style="display: block;">List any medications you are taking:</label><br>
-							<textarea rows="4" cols="50" name="current_medications" placeholder="<?php echo $current_medication; ?>"></textarea>
-							
-							<label for="allergies" style="display: block;">Do you have any health issues? If so, please indicate:</label><br>
-							<textarea rows="4" cols="50" name="health_issues" placeholder="<?php echo $health_issues; ?>"></textarea><br>
-							 <input type="submit" name="updateInfo" value="Update Information" /><br>
-			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		</fieldset>
+		<div class="form-group">
+			<label for="allergies" style="display: block;">Do you have any health issues? If so, please indicate:</label>
+			<textarea rows="4" class="form-control" name="health_issues" placeholder="<?php echo $health_issues; ?>"></textarea>
+		</div>		
+		<input type="submit" name="updateInfo" value="Update Information" /><br>
+		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 		</form>
       </div>
     </div>

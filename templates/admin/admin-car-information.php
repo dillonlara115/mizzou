@@ -8,17 +8,21 @@
       <div class="modal-body">
         <!--Edit Box -->
         <form class='admin-form' action="admin-dashboard.php" method="POST">
-			<fieldset>
-			    <legend>Update Vehicle Information</legend>
-			    <label for="make">Make: </label><br>
-				<input type="text" name="car_make" placeholder="<?php echo $car_make; ?>"/><br>
-				<label for="model">Model: </label><br>
-				<input type="text" name="car_model" placeholder="<?php echo $car_model; ?>"/><br>
-				<label for="model">License Plate Number: </label><br>
-				<input type="text" name="license" placeholder="<?php echo $car_license; ?>"/><br>
-				<input type="submit" name="updateInfo" value="Update Information" /><br>
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			</fieldset>
+			<div class="form-group">
+				 <label for="car_make">Make: </label>
+				<input type="text" class="form-control" name="car_make" placeholder="<?php echo $car_make; ?>"/>
+			</div>
+			<div class="form-group">
+				<label for="car_model">Model: </label>
+				<input type="text" class="form-control" name="car_model" placeholder="<?php echo $car_model; ?>"/>
+			</div>   
+			<div class="form-group">
+				<label for="license">License Plate Number: </label>
+				<input type="text" class="form-control" name="license" placeholder="<?php echo $car_license; ?>"/>
+			</div>	
+			<input type="submit" name="updateInfo" value="Update Information" /><br>
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			
 		</form>
       </div>
     </div>

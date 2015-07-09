@@ -8,25 +8,31 @@
       <div class="modal-body">
         <!--Edit Box -->
         <form class='admin-form' action="member-dashboard.php" method="POST">
-		<fieldset>
-			<small style="font-size: 14px; color: gray; padding-left: 0px; margin-top: 0px;">* denotes a required field.</small>
-			<label for="email">*First Name: </label><br>
-			<input type="text" name="first_name" placeholder="<?php echo $first_name; ?>" /><br>
-			
-			<label for="email">*Last Name: </label><br>
-			<input type="text" name="last_name" placeholder="<?php echo $last_name; ?>"/><br>
-			
-			<label for="season">*Time of Graduation (Spring/Fall): </label><br>
-			<input type="text" name="season" placeholder="<?php echo $season; ?>"/><br>
-			
-			<label for="yearGraduate">*Year of Graduation: </label><br>
-			<input type="text" name="yearGraduate" placeholder="<?php echo $yearGraduate; ?>"/><br>
 		
-			<label for="pledgeClass">*Pledge Class: </label><br>
-			<input type="text" name="pledgeClass" placeholder="<?php echo $pledgeClass; ?>"/><br><br>
+			<small style="font-size: 14px; color: gray; padding-left: 0px; margin-top: 0px;">* denotes a required field.</small>
+			<div class="form-group">
+				<label for="email">*First Name: </label>
+				<input type="text" class="form-control" name="first_name" placeholder="<?php echo $first_name; ?>" />	
+			</div>
+			<div class="form-group">				
+				<label for="email">*Last Name: </label>
+				<input type="text" name="last_name" class="form-control" placeholder="<?php echo $last_name; ?>"/>
+			</div>
+			<div class="form-group">
+				<label for="season">*Time of Graduation (Spring/Fall): </label>
+				<input type="text" name="season" class="form-control" placeholder="<?php echo $season; ?>"/>
+			</div>
+			<div class="form-group">
+				<label for="yearGraduate">*Year of Graduation: </label><br>
+				<input type="text" class="form-control" name="yearGraduate" placeholder="<?php echo $yearGraduate; ?>"/>
+			</div>
+			<div class="form-group">
+				<label for="pledgeClass">*Pledge Class: </label>
+				<input type="text" name="pledgeClass" class="form-control" placeholder="<?php echo $pledgeClass; ?>"/>
+			</div>
 			<input type="submit" name="updateInfo" value="Update Information" /><br>
 			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		</fieldset>
+		
 		</form>
       </div>
     </div>

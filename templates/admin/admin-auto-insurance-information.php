@@ -8,18 +8,30 @@
       <div class="modal-body">
         <!--Edit Box -->
         <form class='admin-form' action="admin-dashboard.php" method="POST">
-		<fieldset>
-			<legend>Auto Insurance</legend>
-			<label for="auto_provider">Name of Insurance Provider: </label><br>
-			<input type="text" name="auto_prov" placeholder="<?php echo $auto_prov; ?>"/><br>
-			<label for="other_last_name">Subscriber Name: </label><br>
-			<input type="text" name="auto_subsc" placeholder="<?php echo $auto_subsc; ?>"/><br>
-			<span>Subscriber Employer:</span><br><input type="text" name="auto_subsc_employer" placeholder="<?php echo $auto_employer; ?>"/><br>
-			<span>Policy Number:</span><br><input type="text" name="auto_policy_no" placeholder="<?php echo $auto_policy; ?>"/><br>
-			<span>Phone Number:</span><br><input type="text" name="auto_phone_no" placeholder="<?php echo $auto_phone; ?>"/><br>
+			<div class="form-group">
+				<label for="auto_prov">Name of Insurance Provider: </label>
+				<input type="text" class="form-control" name="auto_prov" placeholder="<?php echo $auto_prov; ?>"/>
+			</div>
+			<div class="form-group">
+				<label for="auto_subsc">Subscriber Name: </label>
+				<input type="text" class="form-control" name="auto_subsc" placeholder="<?php echo $auto_subsc; ?>"/>
+			</div>
+			<div class="form-group">
+				<label for="auto_subsc_employer">Subscriber Employer:</label>
+				<input type="text" class="form-control" name="auto_subsc_employer" placeholder="<?php echo $auto_employer; ?>"/>
+			</div>
+			
+			<div class="form-gorup">
+				<label for="auto_policy_no">Policy Number:</label>
+				<input type="text" class="form-control" name="auto_policy_no" placeholder="<?php echo $auto_policy; ?>"/>
+			</div>
+			<div class="form-group">
+				<label for="auto_phone_no">Phone Number:</label>
+				<input type="text" class="form-control" name="auto_phone_no" placeholder="<?php echo $auto_phone; ?>"/>
+			</div>
 			<input type="submit" name="updateInfo" value="Update Information" /><br>
 			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		</fieldset>
+		
 		</form>
       </div>
     </div>

@@ -8,22 +8,46 @@
       <div class="modal-body">
         <!--Edit Box -->
         <form class='admin-form' action="member-dashboard.php" method="POST">
-			<fieldset>
-			    <legend>Other Emergency Contact Information</legend>
-			    <label for="other_first_name">First Name: </label><br>
-				<input type="text" name="other_first_name" /placeholder="<?php echo $other_first; ?>"><br>
-				<label for="other_last_name">Last Name: </label><br>
-				<input type="text" name="other_last_name" placeholder="<?php echo $other_last; ?>"/><br>
-			    <span>Address:</span><br><input type="text" name="other_address" placeholder="<?php echo $other_address; ?>"/><br>
-			    <span>Apt:</span><br><input type="text" name="other_apt" placeholder="<?php echo $other_apt; ?>"/><br>
-			    <span>City:</span><br><input type="text" name="other_city" placeholder="<?php echo $other_city; ?>"/><br>
-			    <span>State:</span><br><input type="text" name="other_state" placeholder="<?php echo $other_state; ?>"/><br>
-			    <span>Zip Code:</span><br><input type="text" name="other_zip" placeholder="<?php echo $other_zip; ?>"/><br>
-			    <span>Cell Phone Number:</span><br><input type="tel" name="other_cell_phone" placeholder="<?php echo $other_cell; ?>"><br>
-			    <span>Relation:</span><br><input type="text" name="relation" placeholder="<?php echo $other_relation; ?>"><br>
+			<div class="form-group">
+				<label for="other_first_name">First Name: </label>
+				<input type="text" class="form-control" name="other_first_name" /placeholder="<?php echo $other_first; ?>">
+			</div>
+			<div class="form-group">
+				<label for="other_last_name">Last Name: </label>
+				<input type="text" class="form-control" name="other_last_name" placeholder="<?php echo $other_last; ?>"/>
+			</div>    
+			<div class="form-group">
+				<label for="other_address">Address:</label>
+				<input type="text" class="form-control" name="other_address" placeholder="<?php echo $other_address; ?>"/>
+			</div>	
+			<div class="form-group">
+				<label for="other_apt" >Apt:</label>
+				<input type="text" class="form-control" name="other_apt" placeholder="<?php echo $other_apt; ?>"/>
+			</div>    
+			<div class="form-group">
+				<label for="other_city">City:</label>
+				<input type="text" class="form-control" name="other_city" placeholder="<?php echo $other_city; ?>"/>
+			</div>
+			<div class="form-group">
+				<label for="other_state">State:</label>
+				<input type="text" class="form-control" name="other_state" placeholder="<?php echo $other_state; ?>"/>
+			</div>
+			<div class="form-group">
+				<label for="other_zip">Zip Code:</label>
+				<input type="text" class="form-control" name="other_zip" placeholder="<?php echo $other_zip; ?>"/>
+			</div>
+			<div class="form-group">
+				<label for="other_cell_phone">Cell Phone Number:</label>
+				<input type="tel" class="form-control" name="other_cell_phone" placeholder="<?php echo $other_cell; ?>">
+			</div>   
+			<div class="form-group">
+				<label for="relation">Relation:</label>
+				<input type="text" class="form-control" name="relation" placeholder="<?php echo $other_relation; ?>">
+			</div>
+			    
 			    <input type="submit" name="updateInfo" value="Update Information" /><br>
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			</fieldset>
+			
 		</form>
       </div>
     </div>

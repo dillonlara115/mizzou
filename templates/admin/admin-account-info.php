@@ -8,17 +8,17 @@
       <div class="modal-body">
         <!--Edit Box -->
         <form class='admin-form' action="admin-dashboard.php" method="POST">
-		<fieldset>
-			<legend>Update Current Account Information</legend>
-			<label for="email">First Name: </label><br>
-			<input type="text" name="first_name" placeholder="<?php echo $first_name; ?>" /><br>
-			
-			<label for="email">Last Name: </label><br>
-			<input type="text" name="last_name" placeholder="<?php echo $last_name; ?>"/><br>
-			<input type="submit" name="updateInfo" value="Update Information" /><br>
-			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		</fieldset>
-		</form>
+		      <div class="form-group">
+            <label for="first_name">First Name: </label><br>
+            <input type="text" class="form-control" name="first_name" placeholder="<?php echo $first_name; ?>" /><br>
+          </div>
+		      <div class="form-group">
+            <label for="last_name">Last Name: </label><br>
+            <input type="text" class="form-control" name="last_name" placeholder="<?php echo $last_name; ?>"/><br>
+          </div>
+          <input type="submit" name="updateInfo" value="Update Information" /><br>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		    </form>
       </div>
     </div>
   </div>

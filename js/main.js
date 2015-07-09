@@ -24,8 +24,8 @@ $( document ).ready(function() {
         });
 
 
-        $('.allergy-selection').on('change', function(){
-            var $selection = $('input[name="allergyRadio"]:checked', '.allergy-selection').val()
+        $('#activate-form').on('change', function(){
+            var $selection = $('input[name="allergyRadio"]:checked', '#activate-form').val();
             if ($selection == 'Yes') {
                 $('.allergy-information').addClass('is-visible');
             } else {
