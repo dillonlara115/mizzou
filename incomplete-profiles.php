@@ -42,7 +42,7 @@
 		
 		if(empty($rowCheck) == FALSE) {
 			// Display members and information
-			echo "<table border='1'>
+			echo "<table class='table table-hover table-bordered table-striped'>
 			<thead>
 			<tr>
 			  <th>Email</th>

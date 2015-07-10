@@ -243,154 +243,424 @@
 		?>
 		</h4>
 			<div style="max-width: 960px; margin: 0 auto;">
-				<!--Display Account Information To User -->
-				<div class="account-information">
-					<br>
-					<div id="account-title" class="member-info">
-						<h4>Account Information</h4>
-					</div>
-					<p>First Name: <?php echo $first_name; ?></p>
-					<p>Last Name: <?php echo $last_name; ?></p>
-					<p>Time of Graduation: <?php echo $season; ?></p>
-					<p>Year of Graduation: <?php echo $yearGraduate; ?></p>
-					<p>Pledge Class:<?php echo $pledgeClass; ?></p>
-					<button type="button" data-toggle="modal" class="form-item" data-url="member-account-info" data-target="#editAccountInformation" >Edit Account Information</button>
-				</div>
-				<br>
-					
-				<!--Display General Information To User -->
-				<div class="account-information">
-					<div id="member-general" class="member-info">
-						<h4>General Information</h4>
-					</div>
-					<p>*Date of Birth: <?php echo $birthday; ?></p>
-					<p>*School Address: <?php echo $member_address; ?></p>
-					<p>Apartment Number: <?php echo $member_apt; ?></p>
-					<p>*City: <?php echo $member_city; ?></p>
-					<p>*State: <?php echo $member_state; ?></p>
-					<p>*Zip Code: <?php echo $member_zip; ?></p>
-					<p>Home Phone Number: <?php echo $member_home; ?></p>
-					<p>*Cell Phone Number: <?php echo $member_cell; ?></p>
-					<button type="button" data-toggle="modal" class="form-item" data-url="member-general-info" data-target="#editGeneralInformation" >Edit General Information</button>
-				</div>
-				<br>
-					
-				<!--Display Parent Information To User -->
-				<div class="account-information">
-					<div id="parent" class="member-info">
-						<h4>Parent/Guardian Information</h4>
-					</div>
-					<p>*First Name: <?php echo $parent_first; ?></p>
-					<p>*Last Name: <?php echo $parent_last; ?></p>
-					<p>*Address: <?php echo $parent_address; ?></p>
-					<p>Apartment Number: <?php echo $parent_apt; ?></p>
-					<p>*City: <?php echo $parent_city; ?></p>
-					<p>*State: <?php echo $parent_state; ?></p>
-					<p>*Zip Code: <?php echo $parent_zip; ?></p>
-					<p>Home Phone Number: <?php echo $parent_home; ?></p>
-					<p>*Cell Phone Number: <?php echo $parent_cell; ?></p>
-					<button type="button" data-toggle="modal" class="form-item" data-url="member-guardian-information" data-target="#editGuardianInformation" >Edit Parent/Guardian Information</button>
-					
-				</div>
-				<br>
-					
-				<!--Display Other Contact Information To User -->
-				<div class="account-information">
-					<div id="other" class="member-info">
-						<h4>Other Contact Information</h4>
-					</div>
-					<p>*First Name: <?php echo $other_first; ?></p>
-					<p>*Last Name: <?php echo $other_last; ?></p>
-					<p>Address: <?php echo $other_address; ?></p>
-					<p>Apartment Number: <?php echo $other_apt; ?></p>
-					<p>City: <?php echo $other_city; ?></p>
-					<p>State: <?php echo $other_state; ?></p>
-					<p>Zip Code: <?php echo $other_zip; ?></p>
-					<p>*Relationship: <?php echo $other_relation; ?></p>
-					<p>*Cell Phone Number: <?php echo $other_cell; ?></p>
-					<button type="button" data-toggle="modal" class="form-item" data-url="member-other-contact-information" data-target="#editOtherContactInformation" >Edit Additional Contact Information</button>
-					
-				</div>
-				<br>
-					
-					<!--Display Car Information To User -->
-					<div class="account-information">
-						<div id="transport" class="member-info">
-							<h4>Vehicle Information</h4>
-						</div>
-						<form class="smart-selection">
-							<fieldset>
-								<legend>Do you have a vehicle?</legend>
-		                        <input type="radio" name="carRadio" value="Yes" class="yes-selected" />Yes<br />
-		                        <input type="radio" name="carRadio" value="No" />No<br />                
-							</fieldset>
-						</form>
-						<div class="car-information">
-							<?php if($has_car == 'noCar') {
-								echo "<p>You entered no vehicle.</p>";
-								} else {
-							?>
-							<p>Make: <?php echo $car_make; ?></p>
-							<p>Model: <?php echo $car_model; ?></p>
-							<p>License Plate Number: <?php echo $car_license; ?></p>
-							<?php }?>
-							<button type="button" data-toggle="modal" class="form-item" data-url="member-car-information" data-target="#editCarInformation" >Edit Vehicle Information</button>
-						</div>
+
+			<div class='admin-form'>
 				
-					</div>
-					<br>
-					
-					<!--Display Allergy Information To User -->
-					<div class="account-information">
-						<div id="allergy" class="member-info">
-							<h4>Allergy Information</h4>
-						</div>
-						<form class="allergy-selection">
-							<fieldset>
-								<legend>Do you have allergies?</legend>
-		                        <input type="radio" name="allergyRadio" value="Yes" class="yes-selected" />Yes<br />
-		                        <input type="radio" name="allergyRadio" value="No" />No<br />                
-							</fieldset>
-						</form>
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Account</a></li>
+					<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">General</a></li>
+					<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Guardian</a></li>
+					<li role="presentation"><a href="#other" aria-controls="other" role="tab" data-toggle="tab">Other Contact</a></li>
+					<li role="presentation"><a href="#vehicle" aria-controls="vehicle" role="tab" data-toggle="tab">Vehicle</a></li>
+					<li role="presentation"><a href="#health" aria-controls="health" role="tab" data-toggle="tab">Health</a></li>
+				</ul>
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="home">
+						<div class="account-information">
+							<div id="account-title" class="member-info">
+								<h4>Account Information</h4>
+							</div>
+							<h4 style="font-size: 14px; color: gray; padding-left: 0px; margin-top: 0px;">* denotes a required field.</h4>
+							<div class="form-horizontal">
+								<div class="form-group">
+									<label class="col-sm-3 control-label">*First Name: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $first_name; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">*Last Name: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $last_name; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Time of Graduation: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $season; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Year of Graduation: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $yearGraduate; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Pledge Class:</label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $pledgeClass; ?></p>
+								    </div>
+								</div>
+								
+							</div>
 						
-						<div class="allergy-information">
-							<p>*Allergies: <?php echo $allergies; ?></p>
-							<p>*Allergic to Medicines: <?php echo $allergic_medication; ?></p>
-							<p>*Current Medications: <?php echo $current_medication; ?></p>
-							<p>*Health Issues: <?php echo $health_issues; ?></p>
-							<button type="button" data-toggle="modal" class="form-item" data-url="member-allergy-information" data-target="#editAllergyInformation" >Edit Allergy Information</button>
+							<button type="button" data-toggle="modal" class="form-item" data-url="member-account-info" data-target="#editAccountInformation" >Edit Account Information</button>
 						</div>
 					</div>
-					<br>
-					
-					<!--Display Health Insurance Information To User -->
-					<div class="account-information">
-						<div id="health-insurance" class="member-info">
-							<h4>Health Insurance Information</h4>
+					<div role="tabpanel" class="tab-pane" id="profile">
+					<!--Display General Information To User -->
+						<div class="account-information">
+							<div id="member-general" class="member-info">
+								<h4>General Information</h4>
+							</div>
+							<div class="form-horizontal">
+								<div class="form-group">
+									<label class="col-sm-3 control-label">*Date of Birth: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $birthday; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">*School Address: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $member_address; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Apartment Number: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $member_apt; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">*City: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $member_city; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">*State: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $member_state; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">*Zip Code: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $member_zip; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Home Phone Number: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $member_home; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">*Cell Phone Number: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $member_cell; ?></p>
+								    </div>
+								</div>
+							</div>
+							<button type="button" data-toggle="modal" class="form-item" data-url="member-general-info" data-target="#editGeneralInformation" >Edit General Information</button>
 						</div>
-						<p>Name of Insurance Provider: <?php echo $health_prov; ?></p>
-						<p>Subscriber Name: <?php echo $health_subsc; ?></p>
-						<p>Subscriber Employer: <?php echo $health_employer; ?></p>
-						<p>Policy Number: <?php echo $health_policy; ?></p>
-						<p>Phone Number: <?php echo $health_phone; ?></p>
-						<button type="button" data-toggle="modal" class="form-item" data-url="member-health-insurance-information" data-target="#editHealthInsuranceInformation" >Edit Health Insurance Information</button>
 					</div>
-					<br>
-					
-					<!--Display Auto Insurance Information To User -->
-					<div class="account-information">
-						<div id="auto-insurance" class="member-info">
-							<h4>Auto Insurance Information</h4>
+					<div role="tabpanel" class="tab-pane" id="messages">
+						<div class="account-information">
+							<div id="parent" class="member-info">
+								<h4>Parent/Guardian Information</h4>
+							</div>
+							<div class="form-horizontal">
+								<div class="form-group">
+									<label class="col-sm-3 control-label">*First Name: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $parent_first; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">*Last Name: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $parent_last; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">*Address: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $parent_address; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Apartment Number: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $parent_apt; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">*City: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $parent_city; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">*State: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $parent_state; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">*Zip Code: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $parent_zip; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Home Phone Number: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $parent_home; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">*Cell Phone Number: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $parent_cell; ?></p>
+								    </div>
+								</div>
+							</div>
+							<button type="button" data-toggle="modal" class="form-item" data-url="member-guardian-information" data-target="#editGuardianInformation" >Edit Parent/Guardian Information</button>
+							
 						</div>
-						<p>Name of Insurance Provider: <?php echo $auto_prov; ?></p>
-						<p>Subscriber Name: <?php echo $auto_subsc; ?></p>
-						<p>Subscriber Employer: <?php echo $auto_employer; ?></p>
-						<p>Policy Number: <?php echo $auto_policy; ?></p>
-						<p>Phone Number: <?php echo $auto_phone; ?></p>
-						<button type="button" data-toggle="modal" class="form-item" data-url="member-auto-insurance-information" data-target="#editAutoInsuranceInformation" >Edit Auto Insurance Information</button>
 					</div>
+					<div role="tabpanel" class="tab-pane" id="other">
+						<!--Display Other Contact Information To User -->
+						<div class="account-information">
+							<div id="other" class="member-info">
+								<h4>Other Contact Information</h4>
+							</div>
+							<div class="form-horizontal">
+								<div class="form-group">
+									<label class="col-sm-3 control-label">*First Name: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $other_first; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">*Last Name: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $other_last; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Address: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $other_address; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Apartment Number: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $other_apt; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">City: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $other_city; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">State: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $other_state; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Zip Code: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $other_zip; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">*Relationship: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $other_relation; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">*Cell Phone Number: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $other_cell; ?></p>
+								    </div>
+								</div>
+							</div>
+							<button type="button" data-toggle="modal" class="form-item" data-url="member-other-contact-information" data-target="#editOtherContactInformation" >Edit Additional Contact Information</button>
+							
+						</div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="vehicle">
+						<!--Display Car Information To User -->
+						<div class="account-information">
+							<div id="transport" class="member-info">
+								<h4>Vehicle Information</h4>
+							</div>
+							<form class="smart-selection">
+								<fieldset>
+									<legend>Do you have a vehicle?</legend>
+			                        <input type="radio" name="carRadio" value="Yes" class="yes-selected" />Yes<br />
+			                        <input type="radio" name="carRadio" value="No" />No<br />                
+								</fieldset>
+							</form>
+							<div class="car-information">
+								<?php if($has_car == 'noCar') {
+									echo "<p>You entered no vehicle.</p>";
+									} else {
+								?>
+								<div class="form-horizontal">
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Make: </label>
+									    <div class="col-sm-9">
+									    	<p class="form-control-static"><?php echo $car_make; ?></p>
+									    </div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Model: </label>
+									    <div class="col-sm-9">
+									    	<p class="form-control-static"><?php echo $car_model; ?></p>
+									    </div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">License Plate Number: </label>
+									    <div class="col-sm-9">
+									    	<p class="form-control-static"><?php echo $car_license; ?></p>
+									    </div>
+									</div>
+								</div>
+								<?php }?>
+								<button type="button" data-toggle="modal" class="form-item" data-url="member-car-information" data-target="#editCarInformation" >Edit Vehicle Information</button>
+
+								<div id="auto-insurance" class="member-info">
+									<h4>Auto Insurance Information</h4>
+								</div>
+								<div class="form-horizontal">
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Name of Insurance Provider: </label>
+									    <div class="col-sm-9">
+									    	<p class="form-control-static"><?php echo $auto_prov; ?></p>
+									    </div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Subscriber Name: </label>
+									    <div class="col-sm-9">
+									    	<p class="form-control-static"><?php echo $auto_subsc; ?></p>
+									    </div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Subscriber Employer: </label>
+									    <div class="col-sm-9">
+									    	<p class="form-control-static"><?php echo $auto_employer; ?></p>
+									    </div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Policy Number:</label>
+									    <div class="col-sm-9">
+									    	<p class="form-control-static"><?php echo $auto_policy; ?></p>
+									    </div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Phone Number:</label>
+									    <div class="col-sm-9">
+									    	<p class="form-control-static"><?php echo $auto_phone; ?></p>
+									    </div>
+									</div>
+								</div>
+								<button type="button" data-toggle="modal" class="form-item" data-url="member-auto-insurance-information" data-target="#editAutoInsuranceInformation" >Edit Auto Insurance Information</button>
 					
+							</div>
+					
+						</div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="health">
+						<div class="account-information">
+							<div id="health-insurance" class="member-info">
+								<h4>Health Insurance Information</h4>
+							</div>
+							<div class="form-horizontal">
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Name of Insurance Provider: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $health_prov; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Subscriber Name: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $health_subsc; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Subscriber Employer:</label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $health_employer; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Policy Number:</label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $health_policy; ?></p>
+								    </div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Phone Number: </label>
+								    <div class="col-sm-9">
+								    	<p class="form-control-static"><?php echo $health_phone; ?></p>
+								    </div>
+								</div>
+							</div>
+							<button type="button" data-toggle="modal" class="form-item" data-url="member-health-insurance-information" data-target="#editHealthInsuranceInformation" >Edit Health Insurance Information</button>
+						</div>
+						<!--Display Allergy Information To User -->
+						<div class="account-information">
+							<div id="allergy" class="member-info">
+								<h4>Allergy Information</h4>
+							</div>
+							<form class="allergy-selection">
+								<fieldset>
+									<legend>Do you have allergies?</legend>
+			                        <input type="radio" name="allergyRadio" value="Yes" class="yes-selected" />Yes<br />
+			                        <input type="radio" name="allergyRadio" value="No" />No<br />                
+								</fieldset>
+							</form>
+							
+							<div class="allergy-information">
+								<div class="form-horizontal">
+									<div class="form-group">
+										<label class="col-sm-3 control-label">*Allergies: </label>
+									    <div class="col-sm-9">
+									    	<p class="form-control-static"><?php echo $allergies; ?></p>
+									    </div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">*Allergic to Medicines: </label>
+									    <div class="col-sm-9">
+									    	<p class="form-control-static"><?php echo $allergic_medication; ?></p>
+									    </div>
+									</div>
+
+									<div class="form-group">
+										<label class="col-sm-3 control-label">*Current Medications: </label>
+									    <div class="col-sm-9">
+									    	<p class="form-control-static"><?php echo $current_medication; ?></p>
+									    </div>
+									</div>
+
+									<div class="form-group">
+										<label class="col-sm-3 control-label">*Health Issues: </label>
+									    <div class="col-sm-9">
+									    	<p class="form-control-static"><?php echo $health_issues; ?></p>
+									    </div>
+									</div>
+
+								</div>
+								<button type="button" data-toggle="modal" class="form-item" data-url="member-allergy-information" data-target="#editAllergyInformation" >Edit Allergy Information</button>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
+		</div>
 <div id="results-modals"></div>
 			<!-- Modal -->
 <?php include("includes/footer.php"); ?>

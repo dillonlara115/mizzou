@@ -42,7 +42,7 @@
 		$result = mysqli_query($con,"SELECT first_name, last_name, email, pledge_class, id FROM members WHERE verified = 0");
 		
 		if(empty($rowCheck[0]) == FALSE) {
-			echo "<table border='1'>
+			echo "<table class='table table-hover table-bordered table-striped'>
 					<tr>
 					  <th>Member Name</th>
 					  <th>Pledge Class</th>

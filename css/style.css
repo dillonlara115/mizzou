@@ -65,25 +65,6 @@ body {
 	margin-left: 20px;
 }
 
-table { 
-color: #333; /* Lighten up font color */
-font-family: Helvetica, Arial, sans-serif; /* Nicer font */
-width: 640px; 
-border-collapse: 
-collapse; border-spacing: 0; 
-}
-
-td, th { border: 1px solid #CCC; height: 30px; } /* Make cells a bit taller */
-
-th {
-background: #F3F3F3; /* Light grey background */
-font-weight: bold; /* Make sure they're bold */
-}
-
-td {
-background: #FAFAFA; /* Lighter grey background */
-text-align: center; /* Center our text */
-}
 
 /* Login Page CSS ======================== */
 #logo {
@@ -338,6 +319,8 @@ a {
     padding: 3px 3px 3px 5px;
     width: 70%;
     font: normal 12px/12px Georgia, "Times New Roman", Times, serif;
+    -webkit-transition: all 250ms ease;
+    transition: all 250ms ease;
 }
 .basic-grey select {
     background: #FFF url('down-arrow.png') no-repeat right;
@@ -366,6 +349,8 @@ input[type=submit], button {
     padding: 10px 25px 10px 25px;
     color: #FFF;
     margin: .5em;
+    -webkit-transition: all 250ms ease;
+    transition: all 250ms ease;
 }
 
 input[type=submit]:hover, button:hover {
@@ -406,7 +391,11 @@ input[type=submit]:hover, button:hover {
 	margin-top: 20px;
 }
 
+#account-title {
+	background: url('http://maxtestdomain.com/theta/images/icons/member-account.png');
+	background-repeat: no-repeat;
 
+}
 
 #member-general {
 	background: url('http://maxtestdomain.com/theta/images/icons/member-general.png');
@@ -451,7 +440,6 @@ input[type=submit]:hover, button:hover {
 
 .image-container { 
 	width: 150px; 
-	height: 150px; 
 	margin-left: 100px;
 	margin-top: 10px;
 	overflow: hidden; 
@@ -464,7 +452,7 @@ input[type=submit]:hover, button:hover {
 
 #general-profile {
 	width: 85%;
-	margin: 0 auto;
+	margin: 0 auto 2em;
 	padding-top: 10px;
 	min-height: 130px;
 }
@@ -474,12 +462,6 @@ input[type=submit]:hover, button:hover {
 	margin-top: -20px;
 	width: 230px;
 	display: block;
-}
-
-p {
-	font-size: 18px;
-	margin: 0px;
-	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 }
 
 label {
@@ -504,7 +486,6 @@ h4 {
 }
 
 .account-information {
-	width: 90%;
 	margin: 0 auto;
 	padding-bottom: 30px;
 	max-width: 960px;
@@ -552,11 +533,6 @@ h4 {
     transform: translate3d(-100%, 0, 0) rotateY(0deg);
 }
 
-
-
-input {
-	width: 200px;
-}
 
 input[type=radio] {
 	width: 30px;

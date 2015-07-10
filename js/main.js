@@ -32,6 +32,15 @@ $( document ).ready(function() {
                 $('.allergy-information').removeClass('is-visible');
             }
         });
+
+        $('.allergy-selection').on('change', function(){
+            var $selection = $('input[name="allergyRadio"]:checked', '.allergy-selection').val();
+            if ($selection == 'Yes') {
+                $('.allergy-information').addClass('is-visible');
+            } else {
+                $('.allergy-information').removeClass('is-visible');
+            }
+        });
          
         $('.form-item').on('click', function () {
             var $this = $(this).data('target');

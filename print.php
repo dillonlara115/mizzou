@@ -40,21 +40,52 @@
 <p style="font-size: 13px; margin-bottom: 10px; font-style: italic;">In order to properly print partial information, account information must be checked</p>
 
 <form name="printForm" action="print.php" method="POST">
+	<div class="checkbox">
+		<label>
+			<input type="checkbox" name="all" value="checked" style="width: 20px;">Display All Information
+		</label>
+	</div>
+	<div class="checkbox">
+		<label>
+			<input type="checkbox" name="account" value="checked" style="width: 20px;">Account Information
+		</label>
+	</div>
 	
-	<input type="checkbox" name="all" value="checked" style="width: 20px;">Display All Information<br>
-	<input type="checkbox" name="account" value="checked" style="width: 20px;">Account Information<br>
-	<input type="checkbox" name="general" value="checked" style="width: 20px;">General Information<br>
-	<input class="information" type="checkbox" name="parent" value="checked" style="width: 20px;">Parent/Guardian Information<br>
-	<input type="checkbox" name="other" value="checked" style="width: 20px;">Other Contact Information<br>
-	<input class="information" type="checkbox" name="vehicle" value="checked" style="width: 20px;">Vehicle Information<br>
-	<input type="checkbox" name="allergy" value="checked" style="width: 20px;">Allergy Information<br>
-	<input class="information" type="checkbox" name="health" value="checked" style="width: 20px;">Health Insurance Information<br>
-	<input type="checkbox" name="auto" value="checked" style="width: 20px;">Auto Insurance Information<br>
-
+	<div class="checkbox">
+		<label>
+			<input type="checkbox" name="general" value="checked" style="width: 20px;">General Information
+		</label>
+	</div>
+	<div class="checkbox">
+		<label>
+			<input class="information" type="checkbox" name="parent" value="checked" style="width: 20px;">Parent/Guardian Information
+		</label>
+	</div>
+	<div class="checkbox">
+		<label>
+			<input type="checkbox" name="other" value="checked" style="width: 20px;">Other Contact Information
+		</label>
+	</div>
+	<div class="checkbox">
+		<label>
+			<input class="information" type="checkbox" name="vehicle" value="checked" style="width: 20px;">Vehicle Information
+		</label>
+	</div>
+	<div class="checkbox">
+		<label>
+			<input class="information" type="checkbox" name="health" value="checked" style="width: 20px;">Health Insurance Information
+		</label>
+	</div>
+	<div class="checkbox">
+		<label>
+			<input type="checkbox" name="auto" value="checked" style="width: 20px;">Auto Insurance Information
+		</label>
+	</div>
+	
 	<input type="submit" name="submit" value="Display Selected Information">
 	<br>
 	<br>
-	<a href="javascript:window.print()">Print Information</a>
+	<a class="btn btn-primary" href="javascript:window.print()">Print Information</a>
 
 </form> 
  

@@ -57,13 +57,16 @@ $completedProfilesFull = $completedProfiles[0];
 	<div>
 		<div class="center-bucket">
 			<h4>Reports</h4>
+          	<div class="list-group">
+          		<a class="list-group-item" href="roster.php">Members Overview</a>
+	          	<a class="list-group-item" href="complete-profiles.php">Completed Profile List <span class="badge"><?php echo $completedProfilesFull; ?> members</span></a>
+	            <a class="list-group-item" href="incomplete-profiles.php">Incompleted Profile List <span class="badge"><?php echo $incompleteCountFull; ?> members</span></a>
+	            <a class="list-group-item" href="pending-profiles.php">Pending Profile List <span class="badge"><?php echo $pendingCountFull; ?> members</span></a>
+	            <a class="list-group-item" href="unverified-profiles.php">Unverified Semester Updated Profiles</a>
+	            <a class="list-group-item" href="print.php">Print/Download Information</a>
+          	</div>
           	
-          	<a href="roster.php">Members Overview</a><br>
-          	<a href="complete-profiles.php">Completed Profile List (<?php echo $completedProfilesFull; ?> members)</a><br>
-            <a href="incomplete-profiles.php">Incompleted Profile List (<?php echo $incompleteCountFull; ?> members)</a><br>
-            <a href="pending-profiles.php">Pending Profile List (<?php echo $pendingCountFull; ?> members)</a><br>
-            <a href="unverified-profiles.php">Unverified Semester Updated Profiles</a><br>
-            <a href="print.php">Print/Download Information</a><br>
+
             
 		</div>
 	</div>
