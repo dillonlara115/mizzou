@@ -43,9 +43,15 @@ if(empty($_SESSION['admin_first_name']) == TRUE ) {
 
 				<div class="center-bucket">
 					<h4>Active Member Roster</h4>
-
+					<div class="form-inline">
+						<div class="form-group">
+							<label for="search">Search for a profile</label>
+					        <input id="search" name="search" placeholder="Start typing here" type="text" class="form-control" data-list=".default_list" autocomplete="off">
+						</div>
+					</div>
+					<br>
 					<?php
-					echo "<table border='1' style='width: 960px;' id='myTable' class='tablesorter'>
+					echo "<table id='myTable' class='table table-hover table-bordered table-striped tablesorter'>
 					<thead>
 						<tr>
 							<th>First Name</th>
@@ -57,7 +63,7 @@ if(empty($_SESSION['admin_first_name']) == TRUE ) {
 							<th>Status</th>
 						</tr>
 						<tr>
-						</thead><tbody>";
+						</thead><tbody class='default_list'>";
 						
 						$con= mysqli_connect("thetaDB.db.9489000.hostedresource.com","thetaDB","Venta#1001","thetaDB");
 						
@@ -97,6 +103,5 @@ if(empty($_SESSION['admin_first_name']) == TRUE ) {
 		</div><!-- /st-content -->
 	</div><!-- /st-pusher -->
 </div><!-- /st-container -->
-<script type="text/javascript" src="http://greekamer.com/mizzou/js/jquery.tablesorter.js"></script> 
 
 <?php include("includes/footer.php"); ?>

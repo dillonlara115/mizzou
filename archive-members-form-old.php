@@ -8,13 +8,7 @@ if(empty($_SESSION['admin_first_name']) == TRUE ) {
 ?>
 
 <?php $pageTitle = 'Archived Members'; include("includes/header.php"); ?>
-<script>
-	$(document).ready(function() 
-	{ 
-		$("#myTable").tablesorter(); 
-	} 
-	); 
-</script>
+
 <div id="st-container" class="st-container">
 	<nav class="st-menu st-effect-4" id="menu-4">
 		<ul>
@@ -114,7 +108,7 @@ if(empty($_SESSION['admin_first_name']) == TRUE ) {
 					}
 					?>	
 					
-					<h4>Lookup Members for:</h4>
+					<h4>Lookup Archived Members for:</h4>
 					<form action="archive-members-form.php" method="POST">
 						<select name="season">
 							<option value="Fall">Fall</option>
@@ -156,49 +150,28 @@ if(empty($_SESSION['admin_first_name']) == TRUE ) {
 						
 						$con= mysqli_connect("thetaDB.db.9489000.hostedresource.com","thetaDB","Venta#1001","thetaDB");
 						
-						$result = mysqli_query($con,"SELECT members.first_name, members.last_name, members.id, members.email, members.pledge_class, members.archive, members.active FROM members WHERE graduation_season LIKE '$season' AND graduation_year = $yearGraduate");
+						$result = mysqli_query($con,"SELECT members.first_name, members.last_name, members.id, members.email, members.pledge_class FROM members WHERE graduation_season LIKE '$season' AND graduation_year = $yearGraduate AND archive = 1");
 						
 						$row = mysqli_fetch_row($result);
 						
 						if(empty($row) == FALSE) {
-							echo "<hr><div class='form-inline'>
-								<div class='form-group'>
-									<label for='search'>Search for a profile</label>
-							        <input id='search' name='search' placeholder='Start typing here' type='text' class='form-control' data-list='.default_list' autocomplete='off'>
-								</div>
-							</div>
-							<br><table id='myTable' class='table table-hover table-bordered table-striped tablesorter'><thead><tr><th>Name</th><th>Email</th><th>Pledge Class</th><th>Unarchive Member</th></tr><thead><tbody class='default_list'>";
-		
-							$resultReal = mysqli_query($con,"SELECT members.first_name, members.last_name, members.id, members.email, members.pledge_class, members.archive, members.active FROM members WHERE graduation_season LIKE '$season' AND graduation_year = $yearGraduate");
+							echo "<table><th>Name</th><th>Email</th><th>Pledge Class</th><th>Unarchive Member</th>";
+		// Display members and information
+							$resultReal = mysqli_query($con,"SELECT members.first_name, members.last_name, members.id, members.email, members.pledge_class FROM members WHERE graduation_season LIKE '$season' AND graduation_year = $yearGraduate AND archive = 1");
 							
 							while($row = mysqli_fetch_row($resultReal))
 							{
-								if($row[5] == 1 && $row[6] == 0) {
-									$value = 'archived';
-									
-								} elseif($row[5] == 0 && $row[6] == 1) {
-									$value = 'active';
-									
-								}
 								echo "
 								<tr>
 									<td><a href='http://greekamer.com/mizzou/profile-overview.php?id=$row[2]'>$row[0] $row[1]</a></td>
 									<td>$row[3]</td>
 									<td>$row[4]</td>
-									<td>";?>
-
-									<?php if($value == 'archived') {?> 
-										<a class='btn btn-primary' href='http://greekamer.com/mizzou/unarchive-member.php?id=<?php echo $row[2]?>'>Unarchive</a>status: <?php echo $value; ?></td>
-									<?php } else { ?> 
-
-										<a class='btn btn-danger' href='http://greekamer.com/mizzou/archive-member.php?id=<?php echo $row[2]?>'>Archive</a>status: <?php echo $value; ?> </td>
-
-									<?php } ?>
+									<td><a href='http://greekamer.com/mizzou/unarchive-member.php?id=$row[2]'>Unarchive</a></td>
 								</tr>
-								<?php ;
+								";
 							}
 							
-							echo "</tbody></table>";
+							echo "</table>";
 						}
 						
 	//Display each user with button to unarchive.

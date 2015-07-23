@@ -49,10 +49,13 @@ body {
 	margin-top: 15px;
 	border: none;
 	padding: 0px !important;
+	cursor: pointer;
+	-webkit-transition: opacity 250ms ease;
+	transition: opacity 250ms ease;
 }
 
 #menu-image:hover {
-	cursor: pointer;
+	opacity: .7;
 }
 
 #sorority-logo {
@@ -78,6 +81,10 @@ body {
 	width: 236px;
 	display: block;
 	margin: 0 auto;
+}
+
+.default_list .btn {
+	margin-right: 1em;
 }
 
 #tagline {
@@ -363,6 +370,10 @@ input[type=submit]:hover, button:hover {
     cursor: pointer;
 }
 
+
+.small-select {
+	max-width: 250px;
+}
 
 /* Profile Styling ================= */
 

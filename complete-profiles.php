@@ -30,6 +30,13 @@
 				<div class="center-bucket">
 					<h4>Completed Profiles</h4>
 					<p>These members have completed their profiles.</p><br>
+					<div class="form-inline">
+						<div class="form-group">
+							<label for="search">Search for a profile</label>
+					        <input id="search" name="search" placeholder="Start typing here" type="text" class="form-control" data-list=".default_list" autocomplete="off">
+						</div>
+					</div>
+					<br>
 					<?php
 					$con= mysqli_connect("thetaDB.db.9489000.hostedresource.com","thetaDB","Venta#1001","thetaDB");
 					
@@ -42,11 +49,12 @@
 					if(empty($rowCheck) == FALSE) {
 			// Display members and information
 						echo "<table class='table table-hover table-bordered table-striped'>
+						<thead>
 						<tr>
 							<th>Email</th>
 							<th>First Name</th>
 							<th>Last Name</th>
-						</tr>
+						</tr></thead><tbody class='default_list'>
 						<tr>";
 							
 							
@@ -65,7 +73,7 @@
 								echo "</tr>";
 							}
 							
-							echo "</table>";
+							echo "</tbody></table>";
 						}
 						else {
 							echo "All profiles have been completed at this time.";

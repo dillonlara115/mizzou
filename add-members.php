@@ -89,7 +89,7 @@ if(empty($_SESSION['admin_first_name']) == TRUE ) {
 							<h3 id="admin-title">Promote Member</h3>
 							<form action="add-member-administrator.php" method="POST">
 								
-								<select name="super-admin">
+								<select class="form-control small-select" name="super-admin">
 									<?php 
 									mysql_connect("thetaDB.db.9489000.hostedresource.com","thetaDB","Venta#1001");
 									mysql_select_db("thetaDB");

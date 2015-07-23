@@ -78,7 +78,7 @@ $( document ).ready(function() {
 
 
 
-
+    $('#search').hideseek();
 
     $('#account-edit').click(function(){
     	document.getElementById('account-info').style.display = "block";
