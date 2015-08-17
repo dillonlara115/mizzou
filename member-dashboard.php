@@ -220,6 +220,7 @@
 				<a href="logout.php">Logout</a><br>
 				<a href="update-email.php">Update email address</a><br>
 				<a href="profile-picture.php">Add/Change Profile Picture</a><br>
+				<a href="password-request.php" style="width:135px;">Forgot your password?</a>
 				<br>
 				<?php 
 				if($verifiedStatus == 0) {

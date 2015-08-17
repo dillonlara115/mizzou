@@ -39,7 +39,7 @@
 			<h4>Enter Email to Reset Password</h4>	
 		</div>
 		
-		<label for="uname">Email: </label>
+		<label for="email">Email: </label>
 		<input type="text" name="email" /><br>
 		
 		<br>

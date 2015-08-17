@@ -4,7 +4,7 @@
 if (isset($_POST['first_name'])) {
 $name = strip_tags($_POST['first_name']);
 echo "Name =".$name."</br>"; 
-echo "<span class=\"label label-info\" >your message has been submitted .. Thanks you</span>";
+echo "<span class=\"label label-info\" >your message has been submitted .. Thank you</span>";
 }?>
 
 <?php include("includes/footer.php"); ?>

@@ -223,7 +223,8 @@ if(isset($_POST['submitNewUser'])) {
 						<h4><?php echo $first_name; ?>, <?php echo $last_name; ?></h4>
 						<p class="member-status">Administrator</p>
 						<a href="logout.php">Sign out</a><br>
-						<a href="admin-profile-picture.php">Add/Change Profile Picture</a>
+						<a href="admin-profile-picture.php">Add/Change Profile Picture</a><br>
+						<a href="password-request.php" style="width:135px;">Forgot your password?</a>
 					</div>
 
 
